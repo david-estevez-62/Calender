@@ -1,0 +1,23 @@
+.container {
+	width:410px;
+	margin: auto;
+}
+li {
+	list-style: none;
+	margin: auto;
+	text-align: center;
+	
+}
+hr {
+	width: 400px;
+}
+
+.textarea {
+	height:300px;
+	width:400px;
+}
+
+/*.expand {
+	height: 300px;
+	width:400px;
+}*/
