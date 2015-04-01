@@ -1,19 +1,13 @@
 $(document).ready(function(){
 
-$(".expandRetract").on('click', function(){
-	if ( $(this).hasClass('editing')===false){
-	$(this).append("<textarea class='expand'>Have plans?</textarea>");
-	$(this).addClass("editing");
+	$(".header").click(function () {
 
-}
+	    $header = $(this);
+	    //getting the next element
+	    $content = $header.next();
+	    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+	    $content.slideToggle(500);
 
-	// $(this.textarea).css ({
- // 	'display': "block",
- // 	height: "400px"
-	// })
-
-})
-
-
+	});
 
 });
