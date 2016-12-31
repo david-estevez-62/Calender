@@ -1,30 +1,13 @@
 $(document).ready(function(){
 
-var openTextboxes =0;
+	$(".header").click(function () {
 
-	$(".expandRetract").on('click', function(){
+	    $header = $(this);
+	    //getting the next element
+	    $content = $header.next();
+	    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+	    $content.slideToggle(500);
 
-		if(openTextboxes<9){
-		
-		$(this).append("<textarea class='textarea'>Have plans?</textarea>");
-
-	
-		openTextboxes += 1;
-	}
-	})
-
-
+	});
 
 });
-
-
-	
-	
-	
-	// $(this.textarea).css ({
- // 	display : "block",
- // 	height: "400px"
-	// })
-
-
-// $(this).toggleClass('expand')

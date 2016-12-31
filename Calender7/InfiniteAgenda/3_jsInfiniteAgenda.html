@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style>
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin:0;
+  }
+  .dateWrapper {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: 0px auto;
+    margin-top: 9%;
+    /*margin-top: 17.5%;*/
+    width: 40%;
+    height: 15%;
+  }
+
+  .day {
+      position: relative; 
+      /*border: 2px solid red;*/
+      top: 0%;
+      width: 100%;
+      height: 100%;
+    }
+
+    .notesOnDay {
+      visibility: hidden;
+    }
+
+
+    .dateWrapper:hover {
+      -webkit-transition: height 0.5s ease-in-out;
+      -moz-transition: height 0.5s ease-in-out;
+      -o-transition: height 0.5s ease-in-out;
+      transition: height 0.5s ease-in-out;
+      /*-webkit-transition: margin-top 0.5s ease-in-out;
+      -moz-transition: margin-top 0.5s ease-in-out;
+      -o-transition: height 0.5s ease-in-out;
+      transition: height 0.5s ease-in-out;*/
+     
+      height:30%;
+      /*margin-top: 10%;*/
+    }
+
+    .dateWrapper:hover > .day {
+      -webkit-transition: height 0.5s ease-in-out;
+      -moz-transition: height 0.5s ease-in-out;
+      -o-transition: height 0.5s ease-in-out;
+      transition: height 0.5s ease-in-out;
+      -webkit-transition: top 0.5s ease-in-out;
+      -moz-transition: top 0.5s ease-in-out;
+      -o-transition: top 0.5s ease-in-out;
+      transition: top 0.5s ease-in-out;
+
+      height: 50%;
+      top:25%;
+    }
+
+
+
+</style>
+<body>
+
+  <script>
+    (function(){
+      for(var i = 0; i<3; i++){
+        var date = (new Date());
+        var initialDays = date.setDate(date.getDate() + i);
+
+        var dateWrapper = document.createElement("div");
+        var initialDayDivs = document.createElement("div");
+        var initialDayDivs = document.createElement("text");
+
+        var dayHeader = document.createElement("h4");
+        var notesOnDay = document.createElement("textarea");
+        
+
+        dateWrapper.className = "dateWrapper";
+        initialDayDivs.className = "day";
+        notesOnDay.className = "notesOnDay";
+
+        dateWrapper.onmouseover = function(){
+          var thatDaysNote = this.getElementsByClassName("notesOnDay")[0];
+          thatDaysNote.style.visibility = "visible";
+        }
+
+        dateWrapper.onmouseleave = function(){
+          var thatDaysNote = this.getElementsByClassName("notesOnDay")[0];
+          thatDaysNote.style.visibility = "hidden";
+        }
+
+
+        dayHeader.innerText = String((new Date(initialDays))).substring(0,16);
+
+
+
+        initialDayDivs.appendChild(dayHeader);
+        dateWrapper.appendChild(initialDayDivs);
+        dateWrapper.appendChild(notesOnDay);
+        document.body.appendChild(dateWrapper);
+      }
+    }())
+  </script>
+</body>
+</html>

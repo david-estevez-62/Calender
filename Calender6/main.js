@@ -48,12 +48,7 @@ $(document).ready(function(){
 
   window.onscroll = function(){
     
-    if(count >= 2 && (window.scrollY > scrolledDownHistory + 300)){
-      
-      hasNotBeenInRegion = true;
-    }
-
-    if(window.scrollY > 300 * count && hasNotBeenInRegion){
+    if($(window).scrollTop() + $(window).height() >= $(document).height()-50 ) {
       console.log(window.scrollY);
       hasNotBeenInRegion = false;
       scrolledDownHistory = window.scrollY;
@@ -68,8 +63,7 @@ $(document).ready(function(){
       }
 
     }
-  };
 
-
+  }
 });
 

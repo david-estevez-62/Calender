@@ -1,20 +1,31 @@
-
+.container {
+	width:410px;
+	margin: auto;
+}
 li {
 	list-style: none;
 	margin: auto;
 	text-align: center;
-	
 }
 hr {
 	width: 400px;
 }
-
-.textarea {
+textarea {
 	height:300px;
 	width:400px;
-}
-
-/*.expand {
-	height: 300px;
+	border: none;
+	outline: none;
+	margin:auto;
 	width:400px;
-}*/
+}
+.expand {
+	display: none;
+}
+section {
+	width:400px;
+	text-align:center;
+}
+.container .content {
+    display: none;
+    padding : 5px;
+}
